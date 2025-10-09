@@ -29,6 +29,7 @@
                 required="true"
                 width="100%"
                 valueHelpRequest=".onOpenValueHelp"
+                showSuggestion="true"
             />
 
             <Label text="" /> 

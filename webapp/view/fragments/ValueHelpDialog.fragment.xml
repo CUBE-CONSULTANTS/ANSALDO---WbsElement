@@ -15,7 +15,7 @@
                 <SearchField
                     width="100%"
                     placeholder="{i18n>searchPlaceholder}"
-                    liveChange="onSearch"
+                    liveChange="onSearchWbs"
                     showRefreshButton="true"
                     class="sapUiSmallMarginBottom"
                 />
@@ -27,7 +27,7 @@
                 >
                     <CustomListItem
                         type="Active"
-                        press="onSelect"
+                        press="onSelectElement"
                     >
                         <VBox
                             class="sapUiTinyMargin"
