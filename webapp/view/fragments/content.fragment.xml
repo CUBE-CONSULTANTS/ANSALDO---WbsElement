@@ -1,0 +1,43 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:layout="sap.ui.layout.form"
+>
+    <Panel
+        class="sapUiNoContentPadding"
+        width="100%"
+        height="auto"
+        headerText="{i18n>WBSElementSelection}"
+    >
+        <layout:SimpleForm
+            class="sapUiSmallMarginTop"
+            id="WBSForm"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanL="4"
+            labelSpanM="4"
+            emptySpanL="1"
+            emptySpanM="1"
+            columnsL="2"
+            columnsM="1"
+        >
+            <Label text="{i18n>SelectWBSElement}" />
+            <Input
+                id="idWbsElement"
+                showValueHelp="true"
+                showClearIcon="true"
+                required="true"
+                width="100%"
+                valueHelpRequest=".onOpenValueHelp"
+            />
+
+            <Label text="" /> 
+            <Button
+                text="{i18n>Syncronize}"
+                icon="sap-icon://synchronize"
+                type="Emphasized"
+                press=".onSynchronizePressed"
+            />
+        </layout:SimpleForm>
+    </Panel>
+</c:FragmentDefinition>
