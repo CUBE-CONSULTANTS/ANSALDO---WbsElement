@@ -1,0 +1,54 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:layout="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Dialog
+        stretch="true"
+        title="{i18n>SearchWbs}"
+        class="sapUiResponsivePadding"
+    >
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <SearchField
+                    width="100%"
+                    placeholder="{i18n>searchPlaceholder}"
+                    liveChange="onSearch"
+                    showRefreshButton="true"
+                    class="sapUiSmallMarginBottom"
+                />
+                <List
+                    id="wbsList"
+                    growing="true"
+                    growingThreshold="20"
+                    width="100%"
+                >
+                    <CustomListItem
+                        type="Active"
+                        press="onSelect"
+                    >
+                        <VBox
+                            class="sapUiTinyMargin"
+                        >
+                            <Text
+                                text="{WBS_ELEM} - {DESCR}"
+                                wrapping="true"
+                                class="sapUiSmallMarginBottom"
+                            />
+                        </VBox>
+                    </CustomListItem>
+                </List>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                press="onCloseDialog"
+                text="{i18n>onclose}"
+                icon="sap-icon://decline"
+                type="Emphasized"
+            />
+        </beginButton>
+    </Dialog>
+</c:FragmentDefinition>

@@ -62,6 +62,25 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent", "sap/ui/
 			} else {
 				this.getRouter().navTo("main", {}, undefined, true);
 			}
-		}
+		},
+		onOpenDialog: function (sDialogName, sFragmentName, oController) {
+					if (!this[sDialogName]) {
+						this[sDialogName] = sap.ui.xmlfragment(sFragmentName, oController);
+						this.getView().addDependent(this[sDialogName]);
+					}
+					this[sDialogName].open();
+					return this[sDialogName];
+				},
+				onCloseDialog: function(oEvent){
+					oEvent.getSource().getParent().close()
+				},
+				showBusy: function (delay) {
+					// sap.ui.core.BusyIndicator.show(delay || 0);
+					sap.ui.core.BusyIndicator.show(delay);
+				},
+				hideBusy: function (delay) {
+					// sap.ui.core.BusyIndicator.hide(delay || 0);
+					sap.ui.core.BusyIndicator.hide(delay);
+				},
 	});
 });
