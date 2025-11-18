@@ -14,6 +14,24 @@
 			"id": "generator-ui5-app",
 			"version": "1.1.0"
 		}
+		"dataSources": {
+      "ZMAN_PID046_EBOM_SRV": {
+        "uri": "/sap/opu/odata/sap/zman_pid046_ebom_srv",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      },
+			"ZLOG_PID999_INTEGRATION_SRV": {
+        "uri": "/sap/opu/odata/sap/ZLOG_PID999_INTEGRATION_SRV",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
 	},
 
 	"sap.ui": {
@@ -59,7 +77,25 @@
 					"fallbackLocale": "en",
 					"async": true
 				}
-			}
+			},
+			"ZMAN_PID046_EBOM_SRV": {
+        "dataSource": "ZMAN_PID046_EBOM_SRV",
+        "preload": true,
+        "settings": {
+          "defaultOperationMode": "Server",
+          "useBatch": true,
+          "refreshAfterChange": true
+        }
+      },
+				"ZLOG_PID999_INTEGRATION_SRV": {
+        "dataSource": "ZLOG_PID999_INTEGRATION_SRV",
+        "preload": true,
+        "settings": {
+          "defaultOperationMode": "Server",
+          "useBatch": true,
+          "refreshAfterChange": true
+        }
+      }
 		},
 		"resources": {
 			"css": [

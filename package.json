@@ -1,12 +1,15 @@
 {
 	"name": "ansaldowbselement",
 	"version": "1.0.0",
-	"description": "UI5 Application: ansaldowbselement",
+	"description": "Wbs Element",
 	"license": "Apache-2.0",
 	"scripts": {
 		"clean": "rimraf dist coverage",
 		"build": "ui5 build --clean-dest",
 		"build:opt": "ui5 build self-contained --clean-dest --all",
+		"build:local": "npm run clean && npm run build:opt && npx serve dist",
+		"deploy": "npm run build && fiori deploy --config ui5-deploy.yaml --verbose && rimraf archive.zip",
+    "deploy:nwabap": "npm run build && nwabap upload --nwabaprc .nwabaprc",
 		"start": "ui5 serve --port 8080 -o index.html",
 		"start-cdn": "ui5 serve --port 8080 -o index-cdn.html",
 		"start:dist": "npm start -- --config ui5-dist.yaml",
