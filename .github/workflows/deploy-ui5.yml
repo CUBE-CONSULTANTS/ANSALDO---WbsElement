@@ -3,7 +3,7 @@ name: Build and Deploy UI5 to GitHub Pages
 on:
   push:
     branches:
-      - VarianteNavigationList
+      - main
   workflow_dispatch:
 
 permissions:
